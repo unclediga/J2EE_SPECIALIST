@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/">
+    <Resource name="bean/MyBeanFactory" auth="Container"
+              type="ru.unclediga.spec.res.MyCustomResource"
+              factory="org.apache.naming.factory.BeanFactory"
+              value="http://market.yandex.ru"/>
+</Context>
