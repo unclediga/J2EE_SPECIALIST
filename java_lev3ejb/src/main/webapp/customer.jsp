@@ -1,5 +1,6 @@
 <%@ page import="ru.unclediga.spec.model.Customer" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Customer</title>
@@ -37,6 +38,16 @@
         <h4>Phone: <%= customer.getPhone()%>
         </h4>
     </div>
+</div>
+<div class="container">
+    <h4>URL: <%= request.getAttribute("URL")%>
+    </h4>
+    <h4>Rate: ${requestScope.RATE}
+    </h4>
+    <h5>Properties</h5>
+    <c:forEach var="map" items="${requestScope.PARAMS}">
+        <h5>${map.key} => ${map.value}</h5>
+    </c:forEach>
 </div>
 </body>
 </html>

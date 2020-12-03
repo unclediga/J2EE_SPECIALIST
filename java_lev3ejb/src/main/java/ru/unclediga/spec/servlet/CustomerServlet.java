@@ -1,6 +1,7 @@
 package ru.unclediga.spec.servlet;
 
 import ru.unclediga.spec.model.Customer;
+import ru.unclediga.spec.service.AppConfig;
 import ru.unclediga.spec.service.CustomerService;
 
 import javax.inject.Inject;
@@ -15,6 +16,8 @@ import java.io.PrintWriter;
 @WebServlet(name = "CustomerServlet", urlPatterns = "/customer")
 public class CustomerServlet extends HttpServlet {
     @Inject
+    AppConfig config;
+    @Inject
     CustomerService customerService;
 
     @Override
@@ -23,6 +26,9 @@ public class CustomerServlet extends HttpServlet {
         if (customerId != null) {
             final Customer customer = customerService.getById(Long.parseLong(customerId));
             req.setAttribute("CUSTOMER", customer);
+            req.setAttribute("URL", config.getMyUrl());
+            req.setAttribute("RATE", config.getRate());
+            req.setAttribute("PARAMS", config.getProperties());
             req.getRequestDispatcher("customer.jsp").forward(req, resp);
         }else {
             resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
