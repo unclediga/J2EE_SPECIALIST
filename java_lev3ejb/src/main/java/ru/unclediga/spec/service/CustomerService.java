@@ -2,18 +2,23 @@ package ru.unclediga.spec.service;
 
 import ru.unclediga.spec.model.Customer;
 
+import javax.annotation.PostConstruct;
 import javax.ejb.Stateless;
 import java.util.Arrays;
 import java.util.List;
 
 @Stateless
 public class CustomerService {
+    private List<Customer> customers;
 
-    private final List<Customer> customers = Arrays.asList(
-            new Customer(1, "Cust1", "111-11-11"),
-            new Customer(2, "Cust2", "222-22-22"),
-            new Customer(3, "Cust3", "333-33-33")
-    );
+    @PostConstruct
+    public void init() {
+        customers = Arrays.asList(
+                new Customer(1, "Cust1", "+7(495)111-11-11"),
+                new Customer(2, "Cust2", "+7(495)222-22-22"),
+                new Customer(3, "Cust3", "+7(495)333-33-33")
+        );
+    }
 
     public List<Customer> getAll() {
         return customers;
