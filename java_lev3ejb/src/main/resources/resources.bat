@@ -13,3 +13,9 @@ asadmin delete-custom-resource resource/myRate
 asadmin create-custom-resource --restype=java.lang.Double --factoryclass=org.glassfish.resources.custom.factory.PrimitivesAndStringFactory --property value=33.13 resource/myRate
 
 asadmin list-custom-resources
+
+rem JMS Resources
+
+asadmin create-jms-resource --restype javax.jms.Topic jms/T1
+
+asadmin list-jms-resources
