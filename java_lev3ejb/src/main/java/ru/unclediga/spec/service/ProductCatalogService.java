@@ -4,8 +4,8 @@ import ru.unclediga.spec.model.CatalogItem;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
+import javax.ejb.Singleton;
 import javax.ejb.Startup;
-import javax.inject.Singleton;
 import java.util.ArrayList;
 import java.util.List;
 
