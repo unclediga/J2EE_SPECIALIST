@@ -1,0 +1,12 @@
+GET http://localhost:8080/java_lev3ejb/rest/hello?name=Igor
+###
+GET http://localhost:8080/java_lev3ejb/rest/customer
+###
+GET http://localhost:8080/java_lev3ejb/rest/customer/2
+###
+GET http://localhost:8080/java_lev3ejb/rest/customer/100
+###
+DELETE http://localhost:8080/java_lev3ejb/rest/customer/2
+###
+DELETE http://localhost:8080/java_lev3ejb/rest/customer/100
+###
